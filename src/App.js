@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import react,{useState} from "react";
+import { Route,Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Login from "./Login";
+import Preferences from "./Preferences";
+
+
+function App(){
+    // const adminUser={
+
+    //   name:"nithya",
+    //   password:"123"
+    // }
+
+    // const [user,setUser]=useState({name: '' , password:''})
+    // const [error,setError]=useState("")
+
+    // const login=(details)=>{
+    //     console.log(details);
+    // }
+
+    // const logout=()=>{
+    //   console.log("Logout");
+    // }
+    //  return(
+    //  <div>
+
+    //    {(user.name != '')?(
+    //      <div>
+    //        <h2>Welcome</h2>
+    //        <button>Logout</button>
+    //      </div>
+
+    //    ):(<Form></Form>)}
+
+    //  </div>
+    //  )
+
+    return(
+      <div>
+        <Routes>
+          
+           <Route  path="/" element={<Login/>}/>
+           <Route path="home" element={<Login/>} />
+           <Route path="users" element={<Preferences></Preferences>}></Route>
+         
+      
+        </Routes>
+       
+      </div>
+    )
 }
-
-export default App;
+export default App
